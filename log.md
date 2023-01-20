@@ -131,7 +131,7 @@ docker compose up -d
 ALTER TABLE t_words IMPORT TABLESPACE;
 ```
 
-なんかエラー出る index を削除する必要があるっぽい
+なんかエラー出る。index を削除する必要があるっぽい
 
 ```
 #1815 - Internal error: Drop all secondary indexes before importing table shovel/t_words when .cfg file is missing.
@@ -145,12 +145,4 @@ word についている index を削除する(phpMyAdmin 上で実行した)
 ALTER TABLE t_words IMPORT TABLESPACE;
 ```
 
-復活！ただ、179 行までしかない
-
-# 一旦やり直す
-
-```bash
-$ docker compose down
-$ sudo rm -rf data
-$ docker compose up -d
-```
+一応レコードは見れるようになった
